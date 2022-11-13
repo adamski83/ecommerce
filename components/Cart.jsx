@@ -8,6 +8,7 @@ import {
 } from "react-icons/ai";
 
 import { TiDeleteOutline } from "react-icons/ti";
+// @ts-ignore
 import toast from "react-hot-toast";
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "./lib/client";
@@ -24,7 +25,10 @@ const Cart = () => {
 	} = useStateContext();
 
 	return (
-		<div className="cart-wrapper" ref={cartRef}>
+		<div
+			className="cart-wrapper"
+			// @ts-ignore
+			ref={cartRef}>
 			<div className="cart-container">
 				<button
 					type="button"
@@ -55,6 +59,7 @@ const Cart = () => {
 						cartItems.map((item) => (
 							<div className="product" key={item._id}>
 								<img
+									// @ts-ignore
 									src={urlFor(item?.image[0])}
 									className="cart-product-image"
 								/>
